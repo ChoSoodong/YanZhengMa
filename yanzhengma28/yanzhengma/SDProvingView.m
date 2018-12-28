@@ -149,8 +149,9 @@
             //先删除相同的tag的输入框
             [self deleteSameTagInArrayWithTag:textField.tag];
     
-            //插入到数组 保证有序
-            [_arrayM insertObject:textField atIndex:textField.tag - KTagNumber];
+            if (self.arrayM.count>=textField.tag - KTagNumber) {
+                [_arrayM insertObject:textField atIndex:textField.tag - KTagNumber];
+            }
             
             
              NSLog(@"---cout---:%zd",self.arrayM.count);
